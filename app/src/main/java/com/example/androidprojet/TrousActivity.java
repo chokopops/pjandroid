@@ -21,40 +21,36 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainPageActivity extends AppCompatActivity {
+public class TrousActivity extends AppCompatActivity {
 
     private ListView listview;
-    private List<String> golfList = new ArrayList<>();
+    private List<String> trousList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_trous);
+
+        Intent i = getIntent();
+        String golfname = (String)i.getStringExtra("golfname");
+        String parcourname = (String)i.getStringExtra("parcourname");
+
+        listview = (ListView)findViewById(R.id.listviewparcours);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        listview = (ListView)findViewById(R.id.listviewgolf);
-
-        Intent i = getIntent();
-        Users user = (Users)i.getSerializableExtra("user");
-
-        Log.i("tag", user.getEmail());
-        Log.i("tag", user.getGolf());
-        Log.i("tag", user.getRole());
-        Log.i("tag", user.getUsername());
-
-        db.collection("Golf")
+        db.collection("Golf").document(golfname).collection("parcours").document(parcourname).collection("trous")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            golfList.clear();
+                            trousList.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                golfList.add(document.getId());
+                                trousList.add(document.getId());
                                 Log.i("TAG", document.getId() + " => " + document.getData());
                             }
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, golfList);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, trousList);
                             adapter.notifyDataSetChanged();
                             listview.setAdapter(adapter);
                         } else {
@@ -66,13 +62,17 @@ public class MainPageActivity extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long arg3)
             {
-                String golfname = parent.getItemAtPosition(position).toString();
+                String trouname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(MainPageActivity.this, "redirected to "+golfname+" page", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), GolfActivity.class);
+                Toast.makeText(TrousActivity.this, "redirected to "+trouname+" page", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), TrouActivity.class);
                 intent.putExtra("golfname", golfname);
+                intent.putExtra("parcourname", parcourname);
+                intent.putExtra("trouname", trouname);
                 startActivity(intent);
             }
         });
+
+
     }
 }

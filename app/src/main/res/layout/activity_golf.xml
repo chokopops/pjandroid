@@ -7,10 +7,9 @@
     tools:context=".GolfActivity">
 
     <ListView
-        android:id="@+id/listviewparcours"
+        android:id="@+id/listviewgolf"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="119dp"
-
-        tools:layout_editor_absoluteY="198dp" />
+        tools:layout_editor_absoluteX="108dp"
+        tools:layout_editor_absoluteY="174dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

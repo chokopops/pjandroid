@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidprojet">
-        <activity android:name=".UploadParcours"></activity>
+        <activity android:name=".InformationsGolfActivity"></activity>
+        <activity android:name=".ProfilActivity" />
+        <activity android:name=".MainMenuUserActivity" />
+        <activity android:name=".UploadParcours" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".ParcoursActivity" />
-        <activity android:name=".MainPageActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".TrousActivity" />
         <activity android:name=".GolfActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".ParcoursActivity" />
         <activity android:name=".TrouActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

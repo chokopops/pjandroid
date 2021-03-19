@@ -6,10 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ParcoursActivity">
 
-    <ListView
-        android:id="@+id/listviewparcours"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="198dp"
-        tools:layout_editor_absoluteY="160dp" />
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="132dp">
+
+        <ListView
+            android:id="@+id/listviewparcours"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -20,10 +19,6 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.firestore.QuerySnapshot;
-
-import java.io.Serializable;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -73,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                finish();
                                 }else if (role.equals("user")){
                                     Toast.makeText(LoginActivity.this, "Redirected to main page", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), MainMenuUserActivity.class);
                                     intent.putExtra("user", user);
                                     startActivity(intent);
                                     finish();
@@ -133,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
                                                         finish();
                                                     }else if (role.equals("user")){
                                                         Toast.makeText(LoginActivity.this, "Logged in successfully as user", Toast.LENGTH_SHORT).show();
-                                                        Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                                                        Intent intent = new Intent(getApplicationContext(), MainMenuUserActivity.class);
                                                         intent.putExtra("user", user);
                                                         startActivity(intent);
                                                         finish();

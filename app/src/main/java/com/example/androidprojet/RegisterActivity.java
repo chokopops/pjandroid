@@ -68,7 +68,7 @@ public class RegisterActivity extends AppCompatActivity {
 //                                finish();
                                 }else if (role.equals("user")){
                                     Toast.makeText(RegisterActivity.this, "Redirected to main page", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
+                                    Intent intent = new Intent(getApplicationContext(), MainMenuUserActivity.class);
                                     intent.putExtra("user", user);
                                     startActivity(intent);
                                     finish();

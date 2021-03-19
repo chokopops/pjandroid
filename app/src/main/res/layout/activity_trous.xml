@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainPageActivity">
+    tools:context=".TrousActivity">
 
     <ListView
-        android:id="@+id/listviewgolf"
+        android:id="@+id/listviewparcours"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="108dp"
-        tools:layout_editor_absoluteY="174dp" />
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="160dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
