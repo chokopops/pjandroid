@@ -131,7 +131,7 @@ public class UploadParcours extends AppCompatActivity{
                                                     .document(parcour).set(imageParcours);
                                             for (int i = 0 ; i < jsp ; i++){
                                                 String tp = "error";
-                                                if (i<10){
+                                                if (i<9){
                                                     tp = String.valueOf(i+1);
                                                     tp = "0"+tp;
                                                 }
