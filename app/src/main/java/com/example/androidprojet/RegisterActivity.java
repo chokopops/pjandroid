@@ -65,12 +65,11 @@ public class RegisterActivity extends AppCompatActivity {
                                 Users user = new Users(username, golf, email, role, photodeprofil);
 
                                 if (role.equals("golf")){
-                                    // accès en tant que connection golf
-//                                                    Toast.makeText(LoginActivity.this, "Redirect to main page", Toast.LENGTH_SHORT).show();
-//                                                    Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
-//                                                    intent.putExtra("user", user);
-//                                                    startActivity(intent);
-//                                finish();
+                                    Toast.makeText(RegisterActivity.this, "Redirect to main page", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), MainMenuGolfActivity.class);
+                                    intent.putExtra("user", user);
+                                    startActivity(intent);
+                                    finish();
                                 }else if (role.equals("user")){
                                     Toast.makeText(RegisterActivity.this, "Redirected to main page", Toast.LENGTH_SHORT).show();
                                     Intent intent = new Intent(getApplicationContext(), MainMenuUserActivity.class);

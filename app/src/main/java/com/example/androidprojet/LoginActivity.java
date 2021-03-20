@@ -60,11 +60,11 @@ public class LoginActivity extends AppCompatActivity {
                                 Users user = new Users(username, golf, email, role, photodeprofil);
 
                                 if (role.equals("golf")){
-                                    // accès en tant que connection golf
-//                                                    Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-//                                                    Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
-//                                                    intent.putExtra("user", user);
-//                                                    startActivity(intent);
+                                    Toast.makeText(LoginActivity.this, "Redirect to main page", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(getApplicationContext(), MainMenuGolfActivity.class);
+                                    intent.putExtra("user", user);
+                                    startActivity(intent);
+                                    finish();
 //                                finish();
                                 }else if (role.equals("user")){
                                     Toast.makeText(LoginActivity.this, "Redirected to main page", Toast.LENGTH_SHORT).show();
@@ -120,11 +120,10 @@ public class LoginActivity extends AppCompatActivity {
                                                     Users user = new Users(username, golf, email, role, photodeprofil);
 
                                                     if (role.equals("golf")){
-                                                        // accès en tant que connection golf
-//                                                    Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-//                                                    Intent intent = new Intent(getApplicationContext(), MainPageActivity.class);
-//                                                    intent.putExtra("user", user);
-//                                                    startActivity(intent);
+                                                        Toast.makeText(LoginActivity.this, "Redirect to main page", Toast.LENGTH_SHORT).show();
+                                                        Intent intent = new Intent(getApplicationContext(), MainMenuGolfActivity.class);
+                                                        intent.putExtra("user", user);
+                                                        startActivity(intent);
                                                         finish();
                                                     }else if (role.equals("user")){
                                                         Toast.makeText(LoginActivity.this, "Logged in successfully as user", Toast.LENGTH_SHORT).show();
