@@ -21,35 +21,45 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GolfActivity extends AppCompatActivity {
+public class GolfActivityCartes extends AppCompatActivity {
 
     private ListView listview;
-    private List<String> golfList = new ArrayList<>();
+    private List<String> carteslist = new ArrayList<>();
+    private String golfname, parcourname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_golf);
+        setContentView(R.layout.activity_golf_cartes);
+
+        Intent i = getIntent();
+        Users user = (Users) i.getSerializableExtra("user");
+
+
+        listview = (ListView) findViewById(R.id.listviewcartedescores);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        listview = (ListView)findViewById(R.id.listviewgolf);
-
-        Intent i = getIntent();
-        Users user = (Users)i.getSerializableExtra("user");
-
-        db.collection("Golf")
+        db.collection("Users").document(user.getEmail()).collection("cartesdescores")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            golfList.clear();
+                            carteslist.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                golfList.add(document.getId());
+                                carteslist.add(document.getId());
+
+                                String[] splitArray = null;
+
+                                splitArray = document.getId().split(" ");
+
+                                golfname = splitArray[1];
+                                parcourname = splitArray[2];
+
                                 Log.i("TAG", document.getId() + " => " + document.getData());
                             }
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, golfList);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, carteslist);
                             adapter.notifyDataSetChanged();
                             listview.setAdapter(adapter);
                         } else {
@@ -59,22 +69,13 @@ public class GolfActivity extends AppCompatActivity {
                 });
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v, int position, long arg3)
-            {
-                String golfname = parent.getItemAtPosition(position).toString();
-
-                Toast.makeText(GolfActivity.this, "redirected to "+golfname+" page", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), ParcoursActivity.class);
+            public void onItemClick(AdapterView<?> parent, View v, int position, long arg3) {
+                Toast.makeText(GolfActivityCartes.this, "redirected to carte page", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), CarteDeScoreActivity.class);
                 intent.putExtra("golfname", golfname);
+                intent.putExtra("parcourname", parcourname);
                 startActivity(intent);
             }
         });
-
-        //TODO ajouter les par de chaque trou,
-        // ajouter les cartes de scores, utiliser un objet qui contient nom trou, le par, j1, j2, j3, j4
-        // faire la partie golf en interface
-        // ajouter les upload de photo dans le register
-        // ajouter les fragment soit en utilisant le tab, soit le drawer, soit le master/detail flow
-        // rendre l'interface jolie
     }
 }

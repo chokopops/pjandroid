@@ -25,6 +25,7 @@ public class MainMenuUserActivity extends AppCompatActivity {
 
         profil = (Button)findViewById(R.id.profil);
         golf = (Button)findViewById(R.id.golf);
+        scorecard = (Button)findViewById(R.id.scorecard);
 
         Intent i = getIntent();
         Users user = (Users)i.getSerializableExtra("user");
@@ -43,6 +44,15 @@ public class MainMenuUserActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent loginPage = new Intent(MainMenuUserActivity.this, GolfActivity.class);
                 startActivity(loginPage);
+            }
+        });
+
+        scorecard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cartespage = new Intent(MainMenuUserActivity.this, GolfActivityCartes.class);
+                cartespage.putExtra("user", user);
+                startActivity(cartespage);
             }
         });
     }

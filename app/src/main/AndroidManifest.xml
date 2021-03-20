@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidprojet">
-        <activity android:name=".InformationsGolfActivity"></activity>
+        <activity android:name=".CarteDeScoreActivity"></activity>
+        <activity android:name=".GolfActivityCartes" />
+        <activity android:name=".InformationsGolfActivity" />
         <activity android:name=".ProfilActivity" />
         <activity android:name=".MainMenuUserActivity" />
         <activity android:name=".UploadParcours" />
