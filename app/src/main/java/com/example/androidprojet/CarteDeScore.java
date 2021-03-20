@@ -16,7 +16,7 @@ import java.util.HashMap;
 public class CarteDeScore {
 
     private String parcoursname;
-    private HashMap<String, LigneCarteDeScore> troulist = new HashMap<String, LigneCarteDeScore>();
+    public HashMap<String, LigneCarteDeScore> troulist = new HashMap<String, LigneCarteDeScore>();
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 

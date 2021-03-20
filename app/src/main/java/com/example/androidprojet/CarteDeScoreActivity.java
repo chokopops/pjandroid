@@ -43,7 +43,30 @@ public class CarteDeScoreActivity extends AppCompatActivity {
         listview = (ListView)findViewById(R.id.listviewscorestrous);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("Golf").document(golfname).collection("parcours")
+                .document(parcourname)
+                .collection("trous")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            HashMap<String, LigneCarteDeScore> tousLesTrous = new HashMap<String, LigneCarteDeScore>();
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                //Log.d("get data", document.getId() + " => " + document.getData());
+                                String par = document.getData().get("par").toString();
+                                LigneCarteDeScore ligneCarteDeScore = new LigneCarteDeScore(par,"0","0","0","0");
+                                tousLesTrous.put(document.getId(), ligneCarteDeScore);
+                            }
+                            CarteDeScore carteDeScore = new CarteDeScore(parcourname, tousLesTrous);
+                            AsyncCds jsp = new AsyncCds(carteDeScore, myAdapter);
+                            jsp.execute();
 
+                        } else {
+                            Log.d("error get data", "Error getting documents: ", task.getException());
+                        }
+                    }
+                });
 //        listview.setAdapter(myAdapter);
 //
 //        db.collection("Golf").document(golfname).collection("parcours").document(parcourname).collection("trous")
@@ -52,6 +75,7 @@ public class CarteDeScoreActivity extends AppCompatActivity {
 //                    @Override
 //                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
 //                        if (task.isSuccessful()) {
+        /*
                             for (int j = 1; j<19; j++) {
                                 String trou = "trou";
                                 if (j<10){
@@ -83,7 +107,7 @@ public class CarteDeScoreActivity extends AppCompatActivity {
                                                 }
                                             }
                                         });
-                            }
+                            }*/
 //                        } else {
 //                            Log.d("TAG", "Error getting documents: ", task.getException());
 //                        }
