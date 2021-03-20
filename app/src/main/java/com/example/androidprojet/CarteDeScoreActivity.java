@@ -41,6 +41,7 @@ public class CarteDeScoreActivity extends AppCompatActivity {
         MyAdapter myAdapter = new MyAdapter();
 
         listview = (ListView)findViewById(R.id.listviewscorestrous);
+        listview.setAdapter(myAdapter);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         db.collection("Golf").document(golfname).collection("parcours")
