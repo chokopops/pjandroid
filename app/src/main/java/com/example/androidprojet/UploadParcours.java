@@ -62,6 +62,9 @@ public class UploadParcours extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_parcours);
 
+        Intent i = getIntent();
+        Users user = (Users)i.getSerializableExtra("user");
+
         //getting views from layout
         buttonChoose = (Button) findViewById(R.id.choose);
         buttonUpload = (Button) findViewById(R.id.upload);
@@ -123,8 +126,8 @@ public class UploadParcours extends AppCompatActivity{
                                             golf.put("nom golf", "mon golf");
 
                                             Log.i("e","ee");
-                                            db.collection("Golf").document("mongolf").set(golf);
-                                            db.collection("Golf").document("mongolf").collection("parcours")
+                                            db.collection("Golf").document(user.getGolf()).set(golf);
+                                            db.collection("Golf").document(user.getGolf()).collection("parcours")
                                                     .document(parcour).set(imageParcours);
                                             for (int i = 0 ; i < jsp ; i++){
                                                 if (i<10){
@@ -137,7 +140,7 @@ public class UploadParcours extends AppCompatActivity{
                                                 troutrou.put("par", "0");
                                                 troutrou.put("distance", "0");
                                                 troutrou.put("image", "");
-                                                db.collection("Golf").document("mongolf").collection("parcours")
+                                                db.collection("Golf").document(user.getGolf()).collection("parcours")
                                                         .document(parcour).collection("trous").document("trou"+tp)
                                                         .set(troutrou);
                                             }
