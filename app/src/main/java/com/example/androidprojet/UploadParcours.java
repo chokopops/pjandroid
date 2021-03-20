@@ -130,11 +130,15 @@ public class UploadParcours extends AppCompatActivity{
                                             db.collection("Golf").document(user.getGolf()).collection("parcours")
                                                     .document(parcour).set(imageParcours);
                                             for (int i = 0 ; i < jsp ; i++){
+                                                String tp = "error";
                                                 if (i<10){
-                                                    String tp = String.valueOf(i+1);
+                                                    tp = String.valueOf(i+1);
                                                     tp = "0"+tp;
                                                 }
-                                                String tp = String.valueOf(i+1);
+                                                else{
+                                                    tp = String.valueOf(i+1);
+                                                }
+
                                                 Map<String, String> troutrou = new HashMap<>();
                                                 troutrou.put("nom trou", tp);
                                                 troutrou.put("par", "0");
