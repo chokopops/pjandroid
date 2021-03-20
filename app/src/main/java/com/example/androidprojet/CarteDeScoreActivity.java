@@ -58,6 +58,7 @@ public class CarteDeScoreActivity extends AppCompatActivity {
                                 String par = document.getData().get("par").toString();
                                 LigneCarteDeScore ligneCarteDeScore = new LigneCarteDeScore(par,"0","0","0","0");
                                 tousLesTrous.put(document.getId(), ligneCarteDeScore);
+                                Log.i("numéro du trou : ", document.getId());
                             }
                             CarteDeScore carteDeScore = new CarteDeScore(parcourname, tousLesTrous);
                             AsyncCds jsp = new AsyncCds(carteDeScore, myAdapter);
@@ -68,54 +69,6 @@ public class CarteDeScoreActivity extends AppCompatActivity {
                         }
                     }
                 });
-//        listview.setAdapter(myAdapter);
-//
-//        db.collection("Golf").document(golfname).collection("parcours").document(parcourname).collection("trous")
-//                .get()
-//                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-//                        if (task.isSuccessful()) {
-        /*
-                            for (int j = 1; j<19; j++) {
-                                String trou = "trou";
-                                if (j<10){
-                                    trou += "0"+j;
-                                }else{
-                                    trou += j;
-                                }
-                                db.collection("Golf").document(golfname).collection("parcours").document(parcourname).collection("trous").document(trou)
-                                        .get()
-                                        .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                                if (task.isSuccessful()) {
-
-                                                    DocumentSnapshot document = task.getResult();
-                                                    LigneCarteDeScore ligne = new LigneCarteDeScore(document.getString("par"), "0", "0", "0", "0");
-                                                    System.out.println(document.getId() +" : "+ ligne.getPar());
-                                                    cds.put(document.getId(), ligne);
-
-                                                    try{
-                                                        AsyncCds task1 = new AsyncCds(ligne, myAdapter);
-                                                        task1.execute();
-                                                    } catch (Exception e) {
-                                                        e.printStackTrace();
-                                                    }
-
-                                                } else {
-                                                    Log.d("TAG", "Error getting data: ", task.getException());
-                                                }
-                                            }
-                                        });
-                            }*/
-//                        } else {
-//                            Log.d("TAG", "Error getting documents: ", task.getException());
-//                        }
-//                    }
-//                });
-////
-
     }
 }
 

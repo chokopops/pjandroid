@@ -23,12 +23,10 @@ public class MyAdapter extends BaseAdapter {
 
     public MyAdapter(){
         this.vector = new Vector<LigneCarteDeScore>();
-        System.out.println("coucou");
     }
 
     @Override
     public int getCount() {
-        Log.i("vector size", Integer.toString(vector.size()));
         return vector.size();
     }
 
@@ -42,11 +40,8 @@ public class MyAdapter extends BaseAdapter {
         return 0;
     }
 
-    //@SuppressLint("WrongViewCast")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-//        ConvertView qui permet d'afficher tous les urls sur l'écran
-        Log.i("my adapter","je suis pas passé dans l'adapter");
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             convertView = inflater.inflate(R.layout.lignecartedescore_layout, parent, false);
@@ -56,14 +51,12 @@ public class MyAdapter extends BaseAdapter {
             ((EditText) convertView.findViewById(R.id.j3)).setText(vector.get(position).getJ3());
             ((EditText) convertView.findViewById(R.id.j4)).setText(vector.get(position).getJ4());*/
         }
-        Log.i("my adapter","je suis passé dans l'adapter");
 
         return convertView;
     }
 
     public void dd(LigneCarteDeScore lcds) {
         this.vector.add(lcds);
-        //Log.i("my adapter", lcds.getPar());
     }
 }
 
