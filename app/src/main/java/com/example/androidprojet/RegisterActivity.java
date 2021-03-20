@@ -14,11 +14,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -94,6 +99,35 @@ public class RegisterActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(password)){
                     etEmail.setError("Password is required");
                 }
+
+                String[] splitArray = null;
+
+                splitArray = email.split("@");
+
+                String username = splitArray[0];
+                String finemail = splitArray[1];
+
+                Map<String, String> user = new HashMap<>();
+                user.put("email", email);
+                user.put("golf", "");
+                user.put("photodeprofil", "");
+                user.put("role", "user");
+                user.put("username", username);
+
+                db.collection("Users").document(email)
+                        .set(user)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.i("tag", "User créer sur firesbase");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("TAG", "Error writing document", e);
+                            }
+                        });
 
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
