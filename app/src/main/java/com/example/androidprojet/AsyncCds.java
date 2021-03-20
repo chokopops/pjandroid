@@ -5,6 +5,8 @@ import android.util.Log;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 
 public class AsyncCds extends AsyncTask<String, Void, CarteDeScore> {
@@ -44,8 +46,19 @@ public class AsyncCds extends AsyncTask<String, Void, CarteDeScore> {
     @Override
     protected void onPostExecute(CarteDeScore lcds) {
         try {
-            for (LigneCarteDeScore ligneCarteDeScore: lcds.troulist.values()){
-                myAdapter.dd(ligneCarteDeScore);
+
+            /*for (int i = 0; i < lcds.troulist.values().size(); i++){
+                myAdapter.dd(lcds.troulist.values());
+            }*/
+            ArrayList<String> arrayList = new ArrayList<String>();
+            for (String key : lcds.troulist.keySet()) {
+                Log.i("reee",(key + " = " + lcds.troulist.get(key)));
+                arrayList.add(key);
+            }
+            Collections.sort(arrayList);
+            for (String key: arrayList){
+                Log.i("hey",(key + " = " + lcds.troulist.get(key)));
+                myAdapter.dd(lcds.troulist.get(key));
             }
             myAdapter.notifyDataSetChanged();
         } catch (Exception e) {

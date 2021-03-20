@@ -124,12 +124,22 @@ public class UploadParcours extends AppCompatActivity{
 
                                             Log.i("e","ee");
                                             db.collection("Golf").document("mongolf").set(golf);
-                                            db.collection("Golf").document("mongolf").collection("parcours").document(parcour).set(imageParcours);
+                                            db.collection("Golf").document("mongolf").collection("parcours")
+                                                    .document(parcour).set(imageParcours);
                                             for (int i = 0 ; i < jsp ; i++){
+                                                if (i<10){
+                                                    String tp = String.valueOf(i+1);
+                                                    tp = "0"+tp;
+                                                }
                                                 String tp = String.valueOf(i+1);
                                                 Map<String, String> troutrou = new HashMap<>();
-                                                golf.put("nom trou", tp);
-                                                db.collection("Golf").document("mongolf").collection("parcours").document(parcour).collection("trous").document("trou"+tp).set(troutrou);
+                                                troutrou.put("nom trou", tp);
+                                                troutrou.put("par", "0");
+                                                troutrou.put("distance", "0");
+                                                troutrou.put("image", "");
+                                                db.collection("Golf").document("mongolf").collection("parcours")
+                                                        .document(parcour).collection("trous").document("trou"+tp)
+                                                        .set(troutrou);
                                             }
 
                                         }
