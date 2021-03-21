@@ -71,11 +71,20 @@ public class UploadParcours extends AppCompatActivity{
 
         error = (TextView) findViewById(R.id.error);
 
-        nombreDeTrous = (EditText) findViewById(R.id.choisirTrou);
         nomParcours = (EditText) findViewById(R.id.nomParcour);
 
 
         imageView = (ImageView) findViewById(R.id.imageView);
+
+        buttonChoose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+            }
+        });
 
         buttonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,11 +126,8 @@ public class UploadParcours extends AppCompatActivity{
                                             Log.i("url",uri.toString());
                                             url = uri.toString();
                                             parcour = nomParcours.getText().toString();
-                                            nombreTrou = nombreDeTrous.getText().toString();
-                                            error.setText(nombreTrou);
                                             Map<String, String> imageParcours = new HashMap<>();
                                             imageParcours.put("image parcour", url);
-                                            int jsp = Integer.parseInt(nombreTrou);
                                             Map<String, String> golf = new HashMap<>();
                                             golf.put("nom golf", "mon golf");
 
@@ -129,7 +135,7 @@ public class UploadParcours extends AppCompatActivity{
                                             db.collection("Golf").document(user.getGolf()).set(golf);
                                             db.collection("Golf").document(user.getGolf()).collection("parcours")
                                                     .document(parcour).set(imageParcours);
-                                            for (int i = 0 ; i < jsp ; i++){
+                                            for (int i = 0 ; i < 18 ; i++){
                                                 String tp = "error";
                                                 if (i<9){
                                                     tp = String.valueOf(i+1);
@@ -140,7 +146,6 @@ public class UploadParcours extends AppCompatActivity{
                                                 }
 
                                                 Map<String, String> troutrou = new HashMap<>();
-                                                troutrou.put("nom trou", tp);
                                                 troutrou.put("par", "0");
                                                 troutrou.put("distance", "0");
                                                 troutrou.put("image", "");
@@ -148,7 +153,6 @@ public class UploadParcours extends AppCompatActivity{
                                                         .document(parcour).collection("trous").document("trou"+tp)
                                                         .set(troutrou);
                                             }
-
                                         }
                                     }).addOnFailureListener(new OnFailureListener() {
                                         @Override
@@ -160,6 +164,8 @@ public class UploadParcours extends AppCompatActivity{
                             });
 
                         }
+
+
 
                         //if there is not any file
                         else {
@@ -176,16 +182,6 @@ public class UploadParcours extends AppCompatActivity{
                     Log.i("efe","feij");
                 }
 
-            }
-        });
-
-        buttonChoose.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
             }
         });
 

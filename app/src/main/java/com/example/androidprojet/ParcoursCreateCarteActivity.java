@@ -52,7 +52,6 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             parcoursList.clear();
-                            parcoursList.add("Informations");
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 parcoursList.add(document.getId());
                                 Log.i("TAG", document.getId() + " => " + document.getData());

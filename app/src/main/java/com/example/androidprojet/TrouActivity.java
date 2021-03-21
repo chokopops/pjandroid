@@ -33,10 +33,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrouActivity extends AppCompatActivity {
+
     private List<String> list = new ArrayList<>();
     private TextView tvdistance;
     private ImageView ivtrou;
-    private Bitmap bm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
