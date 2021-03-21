@@ -73,7 +73,6 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
             {
                 String parcourname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(ParcoursCreateCarteActivity.this, "redirected to " + parcourname + " page", Toast.LENGTH_SHORT).show();
                 Date date2 = new Date(date.getTime());
                 SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy_HH:mm:ss");
                 String d = sdf.format(date2);
@@ -125,6 +124,9 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                        @Override
                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                            DocumentSnapshot document = task.getResult();
+
+                           Toast.makeText(ParcoursCreateCarteActivity.this, "Score card successfully created", Toast.LENGTH_SHORT).show();
+
                            String par = document.getString("par");
                            Map<String, String> score = new HashMap<>();
                            score.put("par", par);

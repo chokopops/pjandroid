@@ -63,7 +63,6 @@ public class GolfCreateCarteActivity extends AppCompatActivity {
             {
                 String golfname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(GolfCreateCarteActivity.this, "redirected to "+golfname+" page", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), ParcoursCreateCarteActivity.class);
                 intent.putExtra("user", user);
                 intent.putExtra("golfname", golfname);

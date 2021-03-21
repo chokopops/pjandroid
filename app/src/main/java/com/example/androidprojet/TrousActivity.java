@@ -64,7 +64,6 @@ public class TrousActivity extends AppCompatActivity {
             {
                 String trouname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(TrousActivity.this, "redirected to "+trouname+" page", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), TrouActivity.class);
                 intent.putExtra("golfname", golfname);
                 intent.putExtra("parcourname", parcourname);

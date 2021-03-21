@@ -63,7 +63,6 @@ public class GolfActivity extends AppCompatActivity {
             {
                 String golfname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(GolfActivity.this, "redirected to "+golfname+" page", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), ParcoursActivity.class);
                 intent.putExtra("golfname", golfname);
                 startActivity(intent);

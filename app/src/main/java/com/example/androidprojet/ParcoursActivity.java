@@ -64,14 +64,12 @@ public class ParcoursActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long arg3)
             {
                 if (position == 0){
-                    Toast.makeText(ParcoursActivity.this, "redirected to "+golfname+" information page", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), InformationsGolfActivity.class);
                     intent.putExtra("golfname", golfname);
                     startActivity(intent);
                 } else {
                     String parcourname = parent.getItemAtPosition(position).toString();
 
-                    Toast.makeText(ParcoursActivity.this, "redirected to " + parcourname + " page", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), TrousActivity.class);
                     intent.putExtra("golfname", golfname);
                     intent.putExtra("parcourname", parcourname);
