@@ -31,6 +31,7 @@ import com.google.firebase.FirebaseOptions;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -96,7 +97,8 @@ public class UploadParcours extends AppCompatActivity{
                         StorageMetadata metadata = new StorageMetadata.Builder()
                                 .setContentType("image/jpeg")
                                 .build();
-                        UploadTask uploadTask = storage.getReference().child("images/"+filePath.getLastPathSegment()).putFile(filePath, metadata);
+                        Date date = new Date();
+                        UploadTask uploadTask = storage.getReference().child("images/"+date.getTime()+ ""+ filePath.getLastPathSegment()).putFile(filePath, metadata);
 
 
                         // Listen for state changes, errors, and completion of the upload.
@@ -119,7 +121,7 @@ public class UploadParcours extends AppCompatActivity{
                         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                             @Override
                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                storage.getReference().child("images/"+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                storage.getReference().child("images/"+date.getTime()+""+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         Log.i("url",uri.toString());
