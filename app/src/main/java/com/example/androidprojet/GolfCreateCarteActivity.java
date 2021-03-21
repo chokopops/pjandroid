@@ -67,6 +67,7 @@ public class GolfCreateCarteActivity extends AppCompatActivity {
                 intent.putExtra("user", user);
                 intent.putExtra("golfname", golfname);
                 startActivity(intent);
+                finish();
             }
         });
     }

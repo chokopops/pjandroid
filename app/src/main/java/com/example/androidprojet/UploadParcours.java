@@ -166,6 +166,7 @@ public class UploadParcours extends AppCompatActivity{
                                         Toast.makeText(UploadParcours.this, "redirected to Main golf page", Toast.LENGTH_SHORT).show();
                                         intent.putExtra("user",user);
                                         startActivity(intent);
+                                        finish();
 
                                     }
                                 }).addOnFailureListener(new OnFailureListener() {

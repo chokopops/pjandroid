@@ -112,6 +112,7 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), GolfActivityCartes.class);
                 intent.putExtra("user", user);
                 startActivity(intent);
+                finish();
             }
         });
     }
