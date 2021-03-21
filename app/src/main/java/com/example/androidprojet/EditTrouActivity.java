@@ -33,6 +33,7 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -146,7 +147,9 @@ public class EditTrouActivity extends AppCompatActivity {
             StorageMetadata metadata = new StorageMetadata.Builder()
                     .setContentType("image/jpeg")
                     .build();
-            UploadTask uploadTask = storage.getReference().child("images/"+filePath.getLastPathSegment()).putFile(filePath, metadata);
+            Date date = new Date();
+
+            UploadTask uploadTask = storage.getReference().child("images/"+ date.getTime() +"_"+ filePath.getLastPathSegment()).putFile(filePath, metadata);
 
 
             // Listen for state changes, errors, and completion of the upload.
