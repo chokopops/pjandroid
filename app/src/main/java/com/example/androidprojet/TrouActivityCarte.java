@@ -146,18 +146,28 @@ public class TrouActivityCarte extends AppCompatActivity {
                                 trou++;
 
                                 String newTrouname = "";
+                                Log.i("taaaaaaaaaaaaaaaaaaag", String.valueOf(trou));
 
                                 if (trou<10){
                                     String newHole = "0"+trou;
                                     newTrouname = array[0].concat(newHole);
-                                }else{
+                                    intent.putExtra("trouname", newTrouname);
+                                    startActivity(intent);
+                                    finish();
+                                }else if((10 < trou) && (trou <19)){
                                     newTrouname = array[0].concat(String.valueOf(trou));
+                                    intent.putExtra("trouname", newTrouname);
+                                    startActivity(intent);
+                                    finish();
+                                } else if (trou == 19){
+                                    Intent intent2 = new Intent(getApplicationContext(), CarteDeScoreActivity.class);
+                                    intent2.putExtra("idcarte", idcarte);
+                                    intent2.putExtra("user", user);
+                                    intent2.putExtra("golfname", golfname);
+                                    intent2.putExtra("parcourname", parcourname);
+                                    startActivity(intent2);
+                                    finish();
                                 }
-
-
-                                intent.putExtra("trouname", newTrouname);
-                                startActivity(intent);
-                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
