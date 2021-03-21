@@ -133,33 +133,33 @@ public class TrouActivityCarte extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Log.i("tag", "carte de score actualisée");
-//                                Log.i("tag", "on passe maintenant au setting du trou name");
-//
-//                                Toast.makeText(TrouActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
-//                                Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
-//                                intent.putExtra("idcarte", idcarte);
-//                                intent.putExtra("user", user);
-//                                intent.putExtra("golfname", golfname);
-//                                intent.putExtra("parcourname", parcourname);
-//
-//                                String[] array = trouname.split("(?<=\\G.{4})");
-//
-//                                int trou = Integer.parseInt(array[1]);
-//                                trou++;
-//
-//                                String newTrouname = "";
-//
-//                                if (trou<10){
-//                                    String newHole = "0"+trou;
-//                                    newTrouname = array[0].concat(newHole);
-//                                }else{
-//                                    newTrouname = array[0].concat(String.valueOf(trou));
-//                                }
-//
-//
-//                                intent.putExtra("trouname", newTrouname);
-//                                startActivity(intent);
-//                                finish();
+                                Log.i("tag", "on passe maintenant au setting du trou name");
+
+                                Toast.makeText(TrouActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
+                                intent.putExtra("idcarte", idcarte);
+                                intent.putExtra("user", user);
+                                intent.putExtra("golfname", golfname);
+                                intent.putExtra("parcourname", parcourname);
+
+                                String[] array = trouname.split("(?<=\\G.{4})");
+
+                                int trou = Integer.parseInt(array[1]);
+                                trou++;
+
+                                String newTrouname = "";
+
+                                if (trou<10){
+                                    String newHole = "0"+trou;
+                                    newTrouname = array[0].concat(newHole);
+                                }else{
+                                    newTrouname = array[0].concat(String.valueOf(trou));
+                                }
+
+
+                                intent.putExtra("trouname", newTrouname);
+                                startActivity(intent);
+                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
