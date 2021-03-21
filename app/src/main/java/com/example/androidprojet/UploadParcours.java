@@ -81,7 +81,7 @@ public class UploadParcours extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (!nomParcours.getText().toString().replaceAll("\\s", "").matches("") && !nombreDeTrous.getText().toString().matches("")){
-                    if (Integer.parseInt(nombreDeTrous.getText().toString()) <= 18){
+                    if ((Integer.parseInt(nombreDeTrous.getText().toString()) == 18) || (Integer.parseInt(nombreDeTrous.getText().toString()) == 9)){
                         if (filePath != null) {
                             // Create the file metadata
                             FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -131,7 +131,7 @@ public class UploadParcours extends AppCompatActivity{
                                                     .document(parcour).set(imageParcours);
                                             for (int i = 0 ; i < jsp ; i++){
                                                 String tp = "error";
-                                                if (i<10){
+                                                if (i<9){
                                                     tp = String.valueOf(i+1);
                                                     tp = "0"+tp;
                                                 }
@@ -167,7 +167,7 @@ public class UploadParcours extends AppCompatActivity{
                         }
                     }
                     else{
-                        error.setText("18 trous maximum");
+                        error.setText("9 ou 18 trous");
                     }
 
                 }
