@@ -51,6 +51,8 @@ public class EditTrouActivity extends AppCompatActivity {
     private Button btedittrou, buttonUploadImage;
     private String trouImageUrl;
 
+    private String datestr = "";
+
     private String golfname = "", parcourname = "", trouname = "";
 
     @Override
@@ -148,8 +150,9 @@ public class EditTrouActivity extends AppCompatActivity {
                     .setContentType("image/jpeg")
                     .build();
             Date date = new Date();
+            datestr = String.valueOf(date.getTime());
 
-            UploadTask uploadTask = storage.getReference().child("images/"+ date.getTime() +"_"+ filePath.getLastPathSegment()).putFile(filePath, metadata);
+            UploadTask uploadTask = storage.getReference().child("images/"+datestr+""+ filePath.getLastPathSegment()).putFile(filePath, metadata);
 
 
             // Listen for state changes, errors, and completion of the upload.
@@ -172,7 +175,7 @@ public class EditTrouActivity extends AppCompatActivity {
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    storage.getReference().child("images/"+date.getTime()+"_"+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    storage.getReference().child("images/"+datestr+""+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             Log.i("url",uri.toString());

@@ -122,24 +122,22 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                 .collection("parcours").document(parcourname)
                 .collection("trous").document(trouname).get()
                 .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                                           @Override
-                                           public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                                               DocumentSnapshot document = task.getResult();
-                                               String par = document.getString("par");
-                                               Log.i("trrrrrrrroooooooouuuuuuuuuuuuuuu!!!!!!!!!!!!!!!!!!!!!!!!!", par);
-                                               Map<String, String> score = new HashMap<>();
-                                               score.put("par", par);
-                                               score.put("j1", "0");
-                                               score.put("j2", "0");
-                                               score.put("j3", "0");
-                                               score.put("j4", "0");
-                                               db.collection("Users").document(user.getEmail())
-                                                       .collection("cartesdescores").document(idcarte)
-                                                       .collection("cartedescore")
-                                                       .document(trouname)
-                                                       .set(score);
-                                           }
-                                       }
-                );
+                       @Override
+                       public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                           DocumentSnapshot document = task.getResult();
+                           String par = document.getString("par");
+                           Map<String, String> score = new HashMap<>();
+                           score.put("par", par);
+                           score.put("j1", "0");
+                           score.put("j2", "0");
+                           score.put("j3", "0");
+                           score.put("j4", "0");
+                           db.collection("Users").document(user.getEmail())
+                                   .collection("cartesdescores").document(idcarte)
+                                   .collection("cartedescore")
+                                   .document(trouname)
+                                   .set(score);
+                       }
+                   });
     }
 }

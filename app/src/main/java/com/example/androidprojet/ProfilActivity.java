@@ -41,6 +41,7 @@ public class ProfilActivity extends AppCompatActivity {
     //a Uri object to store file path
     private Uri filePath;
     private ProgressBar progressbaruploadprofil;
+    private String datestr = "";
 
     private TextView email, username;
     private Button buttonResetPW, buttonUploadImage;
@@ -77,6 +78,7 @@ public class ProfilActivity extends AppCompatActivity {
         buttonUploadImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                progressbaruploadprofil.setVisibility(View.VISIBLE);
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
@@ -103,7 +105,6 @@ public class ProfilActivity extends AppCompatActivity {
     }
 
     protected void upload(){
-        progressbaruploadprofil.setVisibility(View.VISIBLE);
         if (filePath != null) {
             // Create the file metadata
             FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -111,7 +112,8 @@ public class ProfilActivity extends AppCompatActivity {
                     .setContentType("image/jpeg")
                     .build();
             Date date = new Date();
-            UploadTask uploadTask = storage.getReference().child("images/"+date.getTime()+""+ filePath.getLastPathSegment()).putFile(filePath, metadata);
+            datestr = String.valueOf(date.getTime());
+            UploadTask uploadTask = storage.getReference().child("images/"+datestr+""+ filePath.getLastPathSegment()).putFile(filePath, metadata);
 
 
             // Listen for state changes, errors, and completion of the upload.
@@ -134,7 +136,7 @@ public class ProfilActivity extends AppCompatActivity {
             }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    storage.getReference().child("images/"+date.getTime()+""+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    storage.getReference().child("images/"+datestr+""+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             Log.i("url",uri.toString());

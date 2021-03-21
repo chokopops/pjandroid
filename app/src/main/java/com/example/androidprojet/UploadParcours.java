@@ -42,6 +42,7 @@ public class UploadParcours extends AppCompatActivity{
     //Buttons
     private Button buttonChoose;
     private Button buttonUpload;
+    private String datestr = "";
 
     private EditText nombreDeTrous, nomParcours;
 
@@ -103,7 +104,8 @@ public class UploadParcours extends AppCompatActivity{
                                 .setContentType("image/jpeg")
                                 .build();
                         Date date = new Date();
-                        UploadTask uploadTask = storage.getReference().child("images/"+date.getTime()+ ""+ filePath.getLastPathSegment()).putFile(filePath, metadata);
+                        datestr = String.valueOf(date.getTime());
+                        UploadTask uploadTask = storage.getReference().child("images/"+datestr+""+ filePath.getLastPathSegment()).putFile(filePath, metadata);
 
 
                         // Listen for state changes, errors, and completion of the upload.
@@ -126,7 +128,7 @@ public class UploadParcours extends AppCompatActivity{
                         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                             @Override
                             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                storage.getReference().child("images/"+date.getTime()+""+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                storage.getReference().child("images/"+datestr+""+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                     @Override
                                     public void onSuccess(Uri uri) {
                                         Log.i("url",uri.toString());
