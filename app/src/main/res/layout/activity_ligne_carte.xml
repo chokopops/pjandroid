@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#f2e8cf"
     android:layout_height="match_parent">
 
     <TableLayout
@@ -16,6 +17,7 @@
             android:layout_height="40dp">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/alltroucarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -23,6 +25,7 @@
                 android:text="trou" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/allparcarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -30,6 +33,7 @@
                 android:text="par" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/allj1scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -39,6 +43,7 @@
                 android:inputType="textPersonName" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/allj2scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -48,6 +53,7 @@
                 android:inputType="textPersonName" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/allj3scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -57,6 +63,7 @@
                 android:inputType="textPersonName" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/allj4scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"

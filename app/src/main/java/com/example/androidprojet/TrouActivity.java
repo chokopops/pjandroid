@@ -63,8 +63,15 @@ public class TrouActivity extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
 
                             String trouImageUrl = document.getString("image");
+                            if (!trouImageUrl.equals("")){
+                                try{
+                                    Picasso.get().load(trouImageUrl).into(ivtrou);
+                                }catch (Exception e){
+                                    Log.i("error load image", "error");
+                                }
+                            }
 
-                            Picasso.get().load(trouImageUrl).into(ivtrou);
+
 
                             tvdistance.setText(document.getString("distance"));
                         } else {

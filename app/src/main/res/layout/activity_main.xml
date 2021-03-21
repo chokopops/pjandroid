@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".MainActivity">
 
     <Button
+        android:backgroundTint="#bc4749"
         android:id="@+id/signout"
         android:layout_width="212dp"
         android:layout_height="46dp"
@@ -19,6 +21,8 @@
         app:layout_constraintVertical_bias="0.645" />
 
     <Button
+
+        android:backgroundTint="#a7c957"
         android:id="@+id/gotoregister"
         android:layout_width="212dp"
         android:layout_height="46dp"
@@ -31,6 +35,7 @@
         app:layout_constraintVertical_bias="0.389" />
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/gotologin"
         android:layout_width="212dp"
         android:layout_height="46dp"

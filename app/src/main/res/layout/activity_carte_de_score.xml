@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".CarteDeScoreActivity">
 
 
@@ -17,6 +18,7 @@
             android:layout_height="40dp">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/trous"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -24,6 +26,7 @@
                 android:text="Trous" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/par"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -31,6 +34,7 @@
                 android:text="Par" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j1"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -38,6 +42,7 @@
                 android:text="J1" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j2"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -45,6 +50,7 @@
                 android:text="J2" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j3"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
@@ -52,6 +58,7 @@
                 android:text="J3" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j4"
                 android:layout_width="35dp"
                 android:layout_height="30dp"

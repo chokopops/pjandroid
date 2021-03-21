@@ -3,6 +3,7 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
+    android:background="#f2e8cf"
 android:layout_height="match_parent">
 
     <LinearLayout
@@ -19,6 +20,7 @@ android:layout_height="match_parent">
             app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
         <TextView
+            android:textColor="#000000"
             android:id="@+id/tvdistancecarte"
             android:layout_width="match_parent"
             android:layout_height="33dp"
@@ -29,6 +31,7 @@ android:layout_height="match_parent">
             android:layout_height="55dp">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/trous"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,6 +39,7 @@ android:layout_height="match_parent">
                 android:text="Trous" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,6 +47,7 @@ android:layout_height="match_parent">
                 android:text="J1" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -50,6 +55,7 @@ android:layout_height="match_parent">
                 android:text="J2" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -57,6 +63,7 @@ android:layout_height="match_parent">
                 android:text="J3" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,6 +77,7 @@ android:layout_height="match_parent">
             android:layout_height="55dp">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/trou01"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -77,6 +85,9 @@ android:layout_height="match_parent">
                 android:text="TextView" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j1score01"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
@@ -86,6 +97,9 @@ android:layout_height="match_parent">
                 android:hint="Score" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j2score01"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
@@ -95,6 +109,9 @@ android:layout_height="match_parent">
                 android:hint="Score" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j3score01"
                 android:layout_width="29dp"
                 android:layout_height="wrap_content"
@@ -104,6 +121,9 @@ android:layout_height="match_parent">
                 android:hint="Score" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j4score01"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
@@ -114,6 +134,7 @@ android:layout_height="match_parent">
         </TableRow>
 
         <Button
+            android:backgroundTint="#a7c957"
             android:id="@+id/enregistrerscores"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

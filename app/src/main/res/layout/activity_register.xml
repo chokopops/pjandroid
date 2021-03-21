@@ -4,9 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".RegisterActivity">
 
     <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="#000000"
         android:id="@+id/registerpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,6 +25,7 @@
         app:layout_constraintVertical_bias="0.459" />
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/registerbutton"
         android:layout_width="220dp"
         android:layout_height="46dp"
@@ -33,6 +38,7 @@
         app:layout_constraintVertical_bias="0.567" />
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/registertext"
         android:layout_width="173dp"
         android:layout_height="34dp"
@@ -46,6 +52,9 @@
         app:layout_constraintVertical_bias="0.219" />
 
     <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="#000000"
         android:id="@+id/registeremail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

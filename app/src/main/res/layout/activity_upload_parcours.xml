@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".UploadParcours">
 
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/choose"
         android:layout_width="226dp"
         android:layout_height="62dp"
@@ -19,16 +21,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/upload"
         android:layout_width="148dp"
         android:layout_height="48dp"
+        android:layout_marginTop="44dp"
         android:text="Terminer"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomParcour"
-        app:layout_constraintVertical_bias="0.832" />
+        app:layout_constraintTop_toBottomOf="@+id/choisirTrou" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -42,6 +43,9 @@
         app:srcCompat="@android:drawable/ic_menu_upload" />
 
     <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="#000000"
         android:id="@+id/nomParcour"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,6 +59,18 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
+        android:textColor="#000000"
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="56dp"
+        android:text="Nombre de trous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomParcour" />
+
+    <TextView
+        android:textColor="#000000"
         android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -63,6 +79,21 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="#000000"
+        android:id="@+id/choisirTrou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@+id/nomParcour" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

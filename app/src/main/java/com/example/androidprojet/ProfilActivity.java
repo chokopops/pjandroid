@@ -63,7 +63,12 @@ public class ProfilActivity extends AppCompatActivity {
         golf.setText(user.getGolf());
 
         if (!user.getPhotodeprofil().equals("")){
-            Picasso.get().load(user.getPhotodeprofil()).into(imageView);
+            try{
+                Picasso.get().load(user.getPhotodeprofil()).into(imageView);
+            }catch (Exception e){
+                Log.i("error load image", "error");
+            }
+
         }
 
         buttonUploadImage.setOnClickListener(new View.OnClickListener() {

@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".MainMenuUserActivity">
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/profil"
         android:layout_width="166dp"
         android:layout_height="51dp"
@@ -18,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/golf"
         android:layout_width="165dp"
         android:layout_height="51dp"
@@ -29,9 +32,10 @@
 
     <Button
         android:id="@+id/scorecard"
-        android:layout_width="163dp"
-        android:layout_height="47dp"
+        android:layout_width="160dp"
+        android:layout_height="61dp"
         android:layout_marginTop="44dp"
+        android:backgroundTint="#a7c957"
         android:text="Cartes de score"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

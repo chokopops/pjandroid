@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".TrousActivityCarte">
 
     <LinearLayout
@@ -21,6 +22,7 @@
             tools:layout_editor_absoluteY="160dp" />
 
         <Button
+            android:backgroundTint="#bc4749"
             android:id="@+id/supprimercarte"
             android:layout_width="match_parent"
             android:layout_height="55dp"

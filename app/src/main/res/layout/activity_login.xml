@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".LoginActivity">
 
     <TextView
+        android:textColor="#000000"
         android:id="@+id/logintext"
         android:layout_width="183dp"
         android:layout_height="32dp"
@@ -20,6 +22,7 @@
         app:layout_constraintVertical_bias="0.313" />
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/loginbutton"
         android:layout_width="212dp"
         android:layout_height="42dp"
@@ -32,6 +35,9 @@
         app:layout_constraintVertical_bias="0.696" />
 
     <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="#000000"
         android:id="@+id/loginpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +52,9 @@
         app:layout_constraintVertical_bias="0.556" />
 
     <EditText
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:backgroundTint="#000000"
         android:id="@+id/loginemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".TrouActivityCarte">
 
     <LinearLayout
@@ -20,6 +21,7 @@
             app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
         <TextView
+            android:textColor="#000000"
             android:id="@+id/tvdistancecarte"
             android:layout_width="match_parent"
             android:layout_height="33dp"
@@ -30,6 +32,7 @@
             android:layout_height="55dp">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/trous"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,6 +40,7 @@
                 android:text="Trous" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/pars"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,6 +48,7 @@
                 android:text="Par" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j1carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,6 +56,7 @@
                 android:text="J1" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j2carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,6 +64,7 @@
                 android:text="J2" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j3carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,6 +72,7 @@
                 android:text="J3" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/j4carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -78,6 +86,7 @@
             android:layout_height="55dp">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/troucarte"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -85,6 +94,7 @@
                 android:text="trou" />
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/parcarte"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
@@ -92,6 +102,9 @@
                 android:text="par" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j1scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
@@ -101,6 +114,9 @@
                 android:inputType="textPersonName" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j2scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
@@ -110,6 +126,9 @@
                 android:inputType="textPersonName" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j3scorecarte"
                 android:layout_width="29dp"
                 android:layout_height="wrap_content"
@@ -119,6 +138,9 @@
                 android:inputType="textPersonName" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:backgroundTint="#000000"
                 android:id="@+id/j4scorecarte"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
@@ -129,6 +151,7 @@
         </TableRow>
 
         <Button
+            android:backgroundTint="#a7c957"
             android:id="@+id/enregistrerscorescarte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
