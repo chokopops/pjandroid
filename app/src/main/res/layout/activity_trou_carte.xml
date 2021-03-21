@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TrouActivityCarte">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,28 +37,35 @@ android:layout_height="match_parent">
                 android:text="Trous" />
 
             <TextView
-                android:id="@+id/j1"
+                android:id="@+id/pars"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Par" />
+
+            <TextView
+                android:id="@+id/j1carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="J1" />
 
             <TextView
-                android:id="@+id/j2"
+                android:id="@+id/j2carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="J2" />
 
             <TextView
-                android:id="@+id/j3"
+                android:id="@+id/j3carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="J3" />
 
             <TextView
-                android:id="@+id/j4"
+                android:id="@+id/j4carte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -70,53 +78,61 @@ android:layout_height="match_parent">
             android:layout_height="55dp">
 
             <TextView
-                android:id="@+id/trou01"
+                android:id="@+id/troucarte"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="trou" />
+
+            <TextView
+                android:id="@+id/parcarte"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:text="par" />
 
             <EditText
-                android:id="@+id/j1score01"
+                android:id="@+id/j1scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:layout_weight="1"
-                android:hint="Score" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/j2score01"
+                android:id="@+id/j2scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:layout_weight="1"
-                android:hint="Score" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/j3score01"
+                android:id="@+id/j3scorecarte"
                 android:layout_width="29dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:layout_weight="1"
-                android:hint="Score" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/j4score01"
+                android:id="@+id/j4scorecarte"
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:layout_weight="1"
-                android:hint="Score" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
         </TableRow>
 
         <Button
-            android:id="@+id/enregistrerscores"
+            android:id="@+id/enregistrerscorescarte"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enregistrer" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

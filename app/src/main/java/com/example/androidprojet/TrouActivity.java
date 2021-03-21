@@ -33,8 +33,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrouActivity extends AppCompatActivity {
-
-    private ListView listview;
     private List<String> list = new ArrayList<>();
     private TextView tvdistance;
     private ImageView ivtrou;
@@ -49,8 +47,6 @@ public class TrouActivity extends AppCompatActivity {
         String golfname = (String)i.getStringExtra("golfname");
         String parcourname = (String)i.getStringExtra("parcourname");
         String trouname = (String)i.getStringExtra("trouname");
-
-        listview = (ListView)findViewById(R.id.listviewparcours);
         tvdistance = (TextView)findViewById(R.id.tvdistance);
         ivtrou = (ImageView)findViewById(R.id.ivtrou);
 

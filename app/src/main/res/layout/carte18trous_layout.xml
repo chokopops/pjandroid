@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="208dp"
+        tools:layout_editor_absoluteY="193dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <TextView
+                android:id="@+id/trous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Trous" />
+
+            <TextView
+                android:id="@+id/j1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="J1" />
+
+            <TextView
+                android:id="@+id/j2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="J2" />
+
+            <TextView
+                android:id="@+id/j3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="J3" />
+
+            <TextView
+                android:id="@+id/j4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="J4" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score01"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score01"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score01"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score01"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou02"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score02"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score02"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score02"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score02"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score03"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score03"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score03"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score03"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou04"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score04"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score04"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score04"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score04"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou05"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score05"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score05"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score05"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score05"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou06"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score06"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score06"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score06"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score06"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou07"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score07"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score07"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score07"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score07"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou08"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score08"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score08"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score08"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score08"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou09"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score09"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score09"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score09"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score09"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+            android:text="->" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score10"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score10"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score10"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score10"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score11"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score11"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score11"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score11"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score12"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score12"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score12"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score12"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score13"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score13"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score13"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score13"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score14"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score14"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score14"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score14"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score15"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score15"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score15"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score15"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score16"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score16"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score16"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score16"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score17"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score17"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score17"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score17"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/trou18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="TextView" />
+
+            <EditText
+                android:id="@+id/j1score18"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j2score18"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j3score18"
+                android:layout_width="29dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+            <EditText
+                android:id="@+id/j4score18"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_weight="1"
+                android:hint="Score" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <Button
+                android:id="@+id/enregistrer18trou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Enregistrer" />
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

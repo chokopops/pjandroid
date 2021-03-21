@@ -21,7 +21,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GolfActivity extends AppCompatActivity {
+public class GolfCreateCarteActivity extends AppCompatActivity {
 
     private ListView listview;
     private List<String> golfList = new ArrayList<>();
@@ -29,11 +29,11 @@ public class GolfActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_golf);
+        setContentView(R.layout.activity_golf_create_carte);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        listview = (ListView)findViewById(R.id.listviewgolf);
+        listview = (ListView)findViewById(R.id.listviewgolfcreatecarte);
 
         Intent i = getIntent();
         Users user = (Users)i.getSerializableExtra("user");
@@ -63,16 +63,12 @@ public class GolfActivity extends AppCompatActivity {
             {
                 String golfname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(GolfActivity.this, "redirected to "+golfname+" page", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), ParcoursActivity.class);
+                Toast.makeText(GolfCreateCarteActivity.this, "redirected to "+golfname+" page", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), ParcoursCreateCarteActivity.class);
+                intent.putExtra("user", user);
                 intent.putExtra("golfname", golfname);
                 startActivity(intent);
             }
         });
-
-        //TODO faire la partie golf en interface
-        // ajouter les upload de photo dans le register
-        // ajouter les fragment soit en utilisant le tab, soit le drawer, soit le master/detail flow
-        // rendre l'interface jolie
     }
 }

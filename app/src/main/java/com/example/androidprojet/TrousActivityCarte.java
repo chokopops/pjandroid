@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,40 +21,38 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GolfActivityCartes extends AppCompatActivity {
+public class TrousActivityCarte extends AppCompatActivity {
 
     private ListView listview;
-    private List<String> carteslist = new ArrayList<>();
-    private String golfname, parcourname, idcarte;
-    private Button creercarte;
+    private List<String> trousList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_golf_cartes);
+        setContentView(R.layout.activity_trous_carte);
 
         Intent i = getIntent();
         Users user = (Users) i.getSerializableExtra("user");
+        String idcarte = (String) i.getStringExtra("idcarte");
+        String golfname = (String) i.getStringExtra("golfname");
+        String parcourname = (String) i.getStringExtra("parcourname");
 
-        listview = (ListView) findViewById(R.id.listviewcartedescores);
-
-        creercarte = (Button)findViewById(R.id.creercarte);
+        listview = (ListView) findViewById(R.id.listviewparcourscarte);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        db.collection("Users").document(user.getEmail()).collection("cartesdescores")
+        db.collection("Golf").document(golfname).collection("parcours").document(parcourname).collection("trous")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            carteslist.clear();
+                            trousList.clear();
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                carteslist.add(document.getId());
-
+                                trousList.add(document.getId());
                                 Log.i("TAG", document.getId() + " => " + document.getData());
                             }
-                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, carteslist);
+                            ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_selectable_list_item, trousList);
                             adapter.notifyDataSetChanged();
                             listview.setAdapter(adapter);
                         } else {
@@ -66,34 +63,15 @@ public class GolfActivityCartes extends AppCompatActivity {
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long arg3) {
-                Toast.makeText(GolfActivityCartes.this, "redirected to carte page", Toast.LENGTH_SHORT).show();
-                Object listItem = listview.getItemAtPosition(position);
+                String trouname = parent.getItemAtPosition(position).toString();
 
-                String[] splitArray = null;
-
-                idcarte = listItem.toString();
-
-                splitArray = idcarte.split(" ");
-
-                golfname = splitArray[1];
-                parcourname = splitArray[2];
-
-                Log.i("id de la carte", idcarte);
-
-                Intent intent = new Intent(getApplicationContext(), TrousActivityCarte.class);
+                Toast.makeText(TrousActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
                 intent.putExtra("idcarte", idcarte);
+                intent.putExtra("user", user);
                 intent.putExtra("golfname", golfname);
                 intent.putExtra("parcourname", parcourname);
-                intent.putExtra("user", user);
-                startActivity(intent);
-            }
-        });
-
-        creercarte.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), GolfCreateCarteActivity.class);
-                intent.putExtra("user", user);
+                intent.putExtra("trouname", trouname);
                 startActivity(intent);
             }
         });

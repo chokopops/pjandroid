@@ -45,7 +45,7 @@ public class MyAdapter extends BaseAdapter {
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             convertView = inflater.inflate(R.layout.lignecartedescore_layout, parent, false);
-            ((TextView) convertView.findViewById(R.id.trou)).setText(vector.get(position).getPar());
+//            ((TextView) convertView.findViewById(R.id.trou)).setText(vector.get(position).getPar());
             /*((EditText) convertView.findViewById(R.id.j1)).setText(vector.get(position).getJ1());
             ((EditText) convertView.findViewById(R.id.j2)).setText(vector.get(position).getJ2());
             ((EditText) convertView.findViewById(R.id.j3)).setText(vector.get(position).getJ3());
