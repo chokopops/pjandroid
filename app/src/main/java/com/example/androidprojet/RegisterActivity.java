@@ -97,7 +97,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 progressbarregister.setVisibility(View.VISIBLE);
 
-                String email = etEmail.getText().toString();
+                String email = etEmail.getText().toString().toLowerCase();
                 String password = etPassword.getText().toString();
 
                 if(TextUtils.isEmpty(email)){
