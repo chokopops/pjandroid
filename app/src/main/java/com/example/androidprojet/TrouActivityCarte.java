@@ -31,7 +31,7 @@ import java.util.Map;
 public class TrouActivityCarte extends AppCompatActivity {
 
     private List<String> list = new ArrayList<>();
-    private TextView tvdistance, tvtrou, tvpar;
+    private TextView tvdistance2, tvtrou, tvpar;
     private EditText j1score, j2score, j3score, j4score;
     private ImageView ivtrou;
     private Button enregistrerscore;
@@ -49,7 +49,7 @@ public class TrouActivityCarte extends AppCompatActivity {
         String trouname = (String)i.getStringExtra("trouname");
 
 
-        tvdistance = (TextView)findViewById(R.id.tvdistancecarte);
+        tvdistance2 = (TextView)findViewById(R.id.tvdistancecarte2);
         tvtrou = (TextView)findViewById(R.id.troucarte);
         tvpar = (TextView)findViewById(R.id.parcarte);
 
@@ -86,7 +86,7 @@ public class TrouActivityCarte extends AppCompatActivity {
                             }
 
 
-                            tvdistance.setText(document.getString("distance"));
+                            tvdistance2.setText(document.getString("distance"));
 
                             tvpar.setText(document.getString("par"));
                             tvtrou.setText(trouname);

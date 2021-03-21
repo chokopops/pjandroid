@@ -20,12 +20,26 @@
             android:layout_height="544dp"
             app:srcCompat="@drawable/common_google_signin_btn_icon_dark" />
 
-        <TextView
-            android:textColor="#000000"
-            android:id="@+id/tvdistancecarte"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="33dp"
-            android:text="TextView" />
+            android:layout_height="32dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvdistancecarte1"
+                android:layout_width="85dp"
+                android:layout_height="match_parent"
+                android:text="Distance : "
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/tvdistancecarte2"
+                android:layout_width="231dp"
+                android:layout_height="match_parent"
+                android:text="TextView"
+                android:textAlignment="textStart"
+                android:textColor="#000000" />
+        </LinearLayout>
 
         <TableRow
             android:layout_width="match_parent"
