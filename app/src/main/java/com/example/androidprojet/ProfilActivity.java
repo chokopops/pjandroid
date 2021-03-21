@@ -39,7 +39,7 @@ public class ProfilActivity extends AppCompatActivity {
     //a Uri object to store file path
     private Uri filePath;
 
-    private TextView email, username, golf;
+    private TextView email, username;
     private Button buttonResetPW, buttonUploadImage;
     public Users user = new Users("","","","","");
     @Override
@@ -51,7 +51,6 @@ public class ProfilActivity extends AppCompatActivity {
 
         email = (TextView)findViewById(R.id.emailtv2);
         username = (TextView)findViewById(R.id.usernametv2);
-        golf = (TextView)findViewById(R.id.golftv2);
 
         buttonResetPW = (Button)findViewById(R.id.buttonResetPW);
         buttonUploadImage = (Button)findViewById(R.id.buttonUploadImage);
@@ -60,7 +59,6 @@ public class ProfilActivity extends AppCompatActivity {
 
         email.setText(user.getEmail());
         username.setText(user.getUsername());
-        golf.setText(user.getGolf());
 
         if (!user.getPhotodeprofil().equals("")){
             try{

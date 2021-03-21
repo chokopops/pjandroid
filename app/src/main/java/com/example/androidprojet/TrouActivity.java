@@ -35,7 +35,7 @@ import java.util.List;
 public class TrouActivity extends AppCompatActivity {
 
     private List<String> list = new ArrayList<>();
-    private TextView tvdistance;
+    private TextView tvdistance1, tvdistance2, tvpar1, tvpar2;
     private ImageView ivtrou;
 
     @Override
@@ -47,7 +47,12 @@ public class TrouActivity extends AppCompatActivity {
         String golfname = (String)i.getStringExtra("golfname");
         String parcourname = (String)i.getStringExtra("parcourname");
         String trouname = (String)i.getStringExtra("trouname");
-        tvdistance = (TextView)findViewById(R.id.tvdistance);
+        tvdistance1 = (TextView)findViewById(R.id.tvdistance1);
+        tvdistance2 = (TextView)findViewById(R.id.tvdistance2);
+
+        tvpar1 = (TextView)findViewById(R.id.tvpar1);
+        tvpar2 = (TextView)findViewById(R.id.tvpar2);
+
         ivtrou = (ImageView)findViewById(R.id.ivtrou);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -71,9 +76,8 @@ public class TrouActivity extends AppCompatActivity {
                                 }
                             }
 
-
-
-                            tvdistance.setText(document.getString("distance"));
+                            tvdistance2.setText(document.getString("distance"));
+                            tvpar2.setText(document.getString("par"));
                         } else {
                             Log.d("TAG", "Error getting documents: ", task.getException());
                         }
