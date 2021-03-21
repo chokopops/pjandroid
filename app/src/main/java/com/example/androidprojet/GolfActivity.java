@@ -69,10 +69,5 @@ public class GolfActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //TODO faire la partie golf en interface
-        // ajouter les upload de photo dans le register
-        // ajouter les fragment soit en utilisant le tab, soit le drawer, soit le master/detail flow
-        // rendre l'interface jolie
     }
 }

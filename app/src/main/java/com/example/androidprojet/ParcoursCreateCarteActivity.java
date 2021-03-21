@@ -143,5 +143,3 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                 );
     }
 }
-
-//todo reformater la date en tant qu'id pour faire date et heure, c'est + propre
