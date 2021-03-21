@@ -132,10 +132,8 @@ public class TrouActivityCarte extends AppCompatActivity {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                                Log.i("tag", "carte de score actualisée");
-                                Log.i("tag", "on passe maintenant au setting du trou name");
 
-                                Toast.makeText(TrouActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(TrouActivityCarte.this, "Score card successfully edited", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
                                 intent.putExtra("idcarte", idcarte);
                                 intent.putExtra("user", user);

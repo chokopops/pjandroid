@@ -66,7 +66,6 @@ public class GolfActivityCartes extends AppCompatActivity {
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long arg3) {
-                Toast.makeText(GolfActivityCartes.this, "redirected to carte page", Toast.LENGTH_SHORT).show();
                 Object listItem = listview.getItemAtPosition(position);
 
                 String[] splitArray = null;

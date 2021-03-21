@@ -80,7 +80,6 @@ public class TrousActivityCarte extends AppCompatActivity {
                     intent.putExtra("trouname", trouname);
                     startActivity(intent);
                 }else{
-                    Toast.makeText(TrousActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
                     intent.putExtra("idcarte", idcarte);
                     intent.putExtra("user", user);
