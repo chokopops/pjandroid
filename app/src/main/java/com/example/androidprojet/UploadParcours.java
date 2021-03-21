@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -50,7 +51,6 @@ public class UploadParcours extends AppCompatActivity{
 
     private String url = "";
     private String parcour = "";
-    private String nombreTrou = "";
     //ImageView
     private ImageView imageView;
 
@@ -89,91 +89,90 @@ public class UploadParcours extends AppCompatActivity{
         buttonUpload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!nomParcours.getText().toString().replaceAll("\\s", "").matches("") && !nombreDeTrous.getText().toString().matches("")){
-                    if ((Integer.parseInt(nombreDeTrous.getText().toString()) == 18) || (Integer.parseInt(nombreDeTrous.getText().toString()) == 9)){
-                        if (filePath != null) {
-                            // Create the file metadata
-                            FirebaseStorage storage = FirebaseStorage.getInstance();
-                            StorageMetadata metadata = new StorageMetadata.Builder()
-                                    .setContentType("image/jpeg")
-                                    .build();
-                            UploadTask uploadTask = storage.getReference().child("images/"+filePath.getLastPathSegment()).putFile(filePath, metadata);
+                if (!nomParcours.getText().toString().replaceAll("\\s", "").matches("")){
+                    if (filePath != null) {
+                        // Create the file metadata
+                        FirebaseStorage storage = FirebaseStorage.getInstance();
+                        StorageMetadata metadata = new StorageMetadata.Builder()
+                                .setContentType("image/jpeg")
+                                .build();
+                        UploadTask uploadTask = storage.getReference().child("images/"+filePath.getLastPathSegment()).putFile(filePath, metadata);
 
 
-                            // Listen for state changes, errors, and completion of the upload.
-                            uploadTask.addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                                    double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                                    Log.d("TAG", "Upload is " + progress + "% done");
-                                }
-                            }).addOnPausedListener(new OnPausedListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onPaused(UploadTask.TaskSnapshot taskSnapshot) {
-                                    Log.d("TAG", "Upload is paused");
-                                }
-                            }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception exception) {
-                                    // Handle unsuccessful uploads
-                                }
-                            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                                @Override
-                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                                    storage.getReference().child("images/"+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                                        @Override
-                                        public void onSuccess(Uri uri) {
-                                            Log.i("url",uri.toString());
-                                            url = uri.toString();
-                                            parcour = nomParcours.getText().toString();
-                                            Map<String, String> imageParcours = new HashMap<>();
-                                            imageParcours.put("image parcour", url);
-                                            Map<String, String> golf = new HashMap<>();
-                                            golf.put("nom golf", "mon golf");
+                        // Listen for state changes, errors, and completion of the upload.
+                        uploadTask.addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                                double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                                Log.d("TAG", "Upload is " + progress + "% done");
+                            }
+                        }).addOnPausedListener(new OnPausedListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onPaused(UploadTask.TaskSnapshot taskSnapshot) {
+                                Log.d("TAG", "Upload is paused");
+                            }
+                        }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception exception) {
+                                // Handle unsuccessful uploads
+                            }
+                        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                            @Override
+                            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                                storage.getReference().child("images/"+filePath.getLastPathSegment()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Log.i("url",uri.toString());
+                                        url = uri.toString();
+                                        parcour = nomParcours.getText().toString();
+                                        Map<String, String> imageParcours = new HashMap<>();
+                                        imageParcours.put("image parcour", url);
+                                        Map<String, String> golf = new HashMap<>();
+                                        golf.put("nom golf", "mon golf");
 
-                                            Log.i("e","ee");
-                                            db.collection("Golf").document(user.getGolf()).set(golf);
-                                            db.collection("Golf").document(user.getGolf()).collection("parcours")
-                                                    .document(parcour).set(imageParcours);
-                                            for (int i = 0 ; i < 18 ; i++){
-                                                String tp = "error";
-                                                if (i<9){
-                                                    tp = String.valueOf(i+1);
-                                                    tp = "0"+tp;
-                                                }
-                                                else{
-                                                    tp = String.valueOf(i+1);
-                                                }
-
-                                                Map<String, String> troutrou = new HashMap<>();
-                                                troutrou.put("par", "0");
-                                                troutrou.put("distance", "0");
-                                                troutrou.put("image", "");
-                                                db.collection("Golf").document(user.getGolf()).collection("parcours")
-                                                        .document(parcour).collection("trous").document("trou"+tp)
-                                                        .set(troutrou);
+                                        Log.i("e","ee");
+                                        db.collection("Golf").document(user.getGolf()).set(golf);
+                                        db.collection("Golf").document(user.getGolf()).collection("parcours")
+                                                .document(parcour).set(imageParcours);
+                                        for (int i = 0 ; i < 18 ; i++){
+                                            String tp = "error";
+                                            if (i<9){
+                                                tp = String.valueOf(i+1);
+                                                tp = "0"+tp;
                                             }
+                                            else{
+                                                tp = String.valueOf(i+1);
+                                            }
+
+                                            Map<String, String> troutrou = new HashMap<>();
+                                            troutrou.put("par", "0");
+                                            troutrou.put("distance", "0");
+                                            troutrou.put("image", "");
+                                            db.collection("Golf").document(user.getGolf()).collection("parcours")
+                                                    .document(parcour).collection("trous").document("trou"+tp)
+                                                    .set(troutrou);
                                         }
-                                    }).addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception exception) {
-                                            // Handle any errors
-                                        }
-                                    });
-                                }
-                            });
 
-                        }
+                                        Intent intent = new Intent(getApplicationContext(), MainMenuGolfActivity.class);
+                                        Toast.makeText(UploadParcours.this, "redirected to Main golf page", Toast.LENGTH_SHORT).show();
+                                        intent.putExtra("user",user);
+                                        startActivity(intent);
 
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                        // Handle any errors
+                                    }
+                                });
+                            }
+                        });
 
-
-                        //if there is not any file
-                        else {
-                            error.setText("Choisissez une photo");
-                        }
                     }
-                    else{
-                        error.setText("9 ou 18 trous");
+
+                    //if there is not any file
+                    else {
+                        error.setText("Choisissez une photo");
                     }
 
                 }

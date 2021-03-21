@@ -16,6 +16,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -31,6 +32,7 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
     private ListView listviewparcours;
     private List<String> parcoursList = new ArrayList<>();
     private Date date = new Date();
+    private String trouname = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,15 +76,10 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
 
                 String idcarte = date.getTime()+" "+golfname+" "+parcourname;
 
-                Map<String, String> score = new HashMap<>();
-                score.put("par", "0");
-                score.put("j1", "0");
-                score.put("j2", "0");
-                score.put("j3", "0");
-                score.put("j4", "0");
+
 
                 Map<String, String> carteidfirestore = new HashMap<>();
-                score.put("par", "0");
+                carteidfirestore.put("carte", idcarte);
 
                 db.collection("Users").document(user.getEmail()).collection("cartesdescores").document(idcarte)
                         .set(carteidfirestore)
@@ -100,27 +97,13 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                         });
 
                 for (int j=1; j<19; j++){
-                    String trouname = "trou";
+                    trouname = "trou";
                     if (j<10){
                         trouname += "0"+j;
                     } else {
                         trouname += j;
                     }
-                    db.collection("Users").document(user.getEmail()).collection("cartesdescores").document(idcarte).collection("cartedescore")
-                            .document(trouname)
-                            .set(score)
-                            .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                @Override
-                                public void onSuccess(Void aVoid) {
-                                    Log.i("tag", "carte de score actualisée");
-                                }
-                            })
-                            .addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.w("TAG", "Error writing document", e);
-                                }
-                            });
+                    setCarte(trouname, golfname, parcourname, db, user, idcarte);
                 }
 
                 Intent intent = new Intent(getApplicationContext(), GolfActivityCartes.class);
@@ -128,6 +111,32 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private void setCarte(String trouname, String golfname, String parcourname, FirebaseFirestore db, Users user, String idcarte){
+        db.collection("Golf").document(golfname)
+                .collection("parcours").document(parcourname)
+                .collection("trous").document(trouname).get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                                           @Override
+                                           public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                                               DocumentSnapshot document = task.getResult();
+                                               String par = document.getString("par");
+                                               Log.i("trrrrrrrroooooooouuuuuuuuuuuuuuu!!!!!!!!!!!!!!!!!!!!!!!!!", par);
+                                               Map<String, String> score = new HashMap<>();
+                                               score.put("par", par);
+                                               score.put("j1", "0");
+                                               score.put("j2", "0");
+                                               score.put("j3", "0");
+                                               score.put("j4", "0");
+                                               db.collection("Users").document(user.getEmail())
+                                                       .collection("cartesdescores").document(idcarte)
+                                                       .collection("cartedescore")
+                                                       .document(trouname)
+                                                       .set(score);
+                                           }
+                                       }
+                );
     }
 }
 

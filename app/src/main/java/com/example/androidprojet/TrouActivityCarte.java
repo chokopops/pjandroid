@@ -75,7 +75,7 @@ public class TrouActivityCarte extends AppCompatActivity {
                             DocumentSnapshot document = task.getResult();
 
                             String trouImageUrl = document.getString("image");
-                            if (ivtrou.equals("")){
+                            if (!trouImageUrl.equals("")){
                                 try{
                                     Picasso.get().load(trouImageUrl).into(ivtrou);
                                 }catch (Exception e){

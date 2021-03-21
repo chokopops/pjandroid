@@ -21,15 +21,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:backgroundTint="#a7c957"
         android:id="@+id/upload"
         android:layout_width="148dp"
         android:layout_height="48dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#a7c957"
         android:text="Terminer"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/choisirTrou" />
+        app:layout_constraintTop_toBottomOf="@+id/nomParcour" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -60,17 +61,6 @@
 
     <TextView
         android:textColor="#000000"
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:layout_marginTop="56dp"
-        android:text="Nombre de trous"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nomParcour" />
-
-    <TextView
-        android:textColor="#000000"
         android:id="@+id/error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -79,21 +69,6 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:textColor="@color/black"
-        android:textColorHint="@color/black"
-        android:backgroundTint="#000000"
-        android:id="@+id/choisirTrou"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toBottomOf="@+id/nomParcour" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

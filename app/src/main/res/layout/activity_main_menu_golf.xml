@@ -8,10 +8,10 @@
     tools:context=".MainMenuGolfActivity">
 
     <Button
-        android:backgroundTint="#a7c957"
         android:id="@+id/createparcours"
-        android:layout_width="164dp"
-        android:layout_height="53dp"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:backgroundTint="#a7c957"
         android:text="Créer parcours"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,9 +21,10 @@
         app:layout_constraintVertical_bias="0.41" />
 
     <Button
+        android:backgroundTint="#a7c957"
         android:id="@+id/editparcours"
-        android:layout_width="164dp"
-        android:layout_height="53dp"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
         android:text="Edit parcours"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

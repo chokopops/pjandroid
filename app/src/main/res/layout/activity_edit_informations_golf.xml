@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2e8cf"
     tools:context=".EditInformationsGolfActivity">
 
     <LinearLayout
@@ -19,6 +20,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/tveditadressegolf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -26,6 +28,8 @@
                 android:text="Adresse golf" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:id="@+id/eteditadressegolf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -41,6 +45,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/tveditnomgolf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -48,6 +53,8 @@
                 android:text="Nom golf" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:id="@+id/eteditnomgolf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,6 +70,7 @@
             android:orientation="horizontal">
 
             <TextView
+                android:textColor="#000000"
                 android:id="@+id/tveditvillegolf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,6 +78,8 @@
                 android:text="Ville golf" />
 
             <EditText
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
                 android:id="@+id/eteditvillegolf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -80,6 +90,7 @@
         </LinearLayout>
 
         <Button
+            android:backgroundTint="#a7c957"
             android:id="@+id/editinformationsgolf"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
