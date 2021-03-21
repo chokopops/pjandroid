@@ -113,9 +113,6 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
-                                    Intent intent = new Intent(getApplicationContext(), GolfActivityCartes.class);
-                                    intent.putExtra("user", user);
-                                    startActivity(intent);
                                     Log.i("tag", "carte de score actualisée");
                                 }
                             })
@@ -126,7 +123,13 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                                 }
                             });
                 }
+
+                Intent intent = new Intent(getApplicationContext(), GolfActivityCartes.class);
+                intent.putExtra("user", user);
+                startActivity(intent);
             }
         });
     }
 }
+
+//todo reformater la date en tant qu'id pour faire date et heure, c'est + propre
