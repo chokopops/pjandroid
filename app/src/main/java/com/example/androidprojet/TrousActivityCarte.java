@@ -9,10 +9,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -25,6 +28,7 @@ public class TrousActivityCarte extends AppCompatActivity {
 
     private ListView listview;
     private List<String> trousList = new ArrayList<>();
+    private Button supprimercarte;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,7 @@ public class TrousActivityCarte extends AppCompatActivity {
         String parcourname = (String) i.getStringExtra("parcourname");
 
         listview = (ListView) findViewById(R.id.listviewparcourscarte);
+        supprimercarte = (Button)findViewById(R.id.supprimercarte);
 
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -48,6 +53,7 @@ public class TrousActivityCarte extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             trousList.clear();
+                            trousList.add("Carte de score total : ");
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 trousList.add(document.getId());
                                 Log.i("TAG", document.getId() + " => " + document.getData());
@@ -65,14 +71,47 @@ public class TrousActivityCarte extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View v, int position, long arg3) {
                 String trouname = parent.getItemAtPosition(position).toString();
 
-                Toast.makeText(TrousActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
-                intent.putExtra("idcarte", idcarte);
-                intent.putExtra("user", user);
-                intent.putExtra("golfname", golfname);
-                intent.putExtra("parcourname", parcourname);
-                intent.putExtra("trouname", trouname);
-                startActivity(intent);
+                if (trouname.equals("Carte de score total : ")){
+                    Intent intent = new Intent(getApplicationContext(), CarteDeScoreActivity.class);
+                    intent.putExtra("idcarte", idcarte);
+                    intent.putExtra("user", user);
+                    intent.putExtra("golfname", golfname);
+                    intent.putExtra("parcourname", parcourname);
+                    intent.putExtra("trouname", trouname);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(TrousActivityCarte.this, "redirected to " + trouname + " page", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), TrouActivityCarte.class);
+                    intent.putExtra("idcarte", idcarte);
+                    intent.putExtra("user", user);
+                    intent.putExtra("golfname", golfname);
+                    intent.putExtra("parcourname", parcourname);
+                    intent.putExtra("trouname", trouname);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        supprimercarte.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.collection("Users").document(user.getEmail()).collection("cartesdescores").document(idcarte)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d("TAG", "DocumentSnapshot successfully deleted!");
+                                Intent cartespage = new Intent(TrousActivityCarte.this, GolfActivityCartes.class);
+                                cartespage.putExtra("user", user);
+                                startActivity(cartespage);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w("TAG", "Error deleting document", e);
+                            }
+                        });
             }
         });
     }

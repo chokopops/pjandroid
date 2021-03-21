@@ -1,69 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CarteDeScoreActivity">
+    android:layout_height="match_parent">
 
-
-    <LinearLayout
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        tools:layout_editor_absoluteX="223dp"
+        tools:layout_editor_absoluteY="178dp">
 
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="40dp">
 
             <TextView
-                android:id="@+id/trous"
+                android:id="@+id/alltroucarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="Trous" />
+                android:text="trou" />
 
             <TextView
-                android:id="@+id/par"
+                android:id="@+id/allparcarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="Par" />
+                android:text="par" />
 
             <TextView
-                android:id="@+id/j1"
+                android:id="@+id/allj1scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="J1" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/j2"
+                android:id="@+id/allj2scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="J2" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/j3"
+                android:id="@+id/allj3scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="J3" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/j4"
+                android:id="@+id/allj4scorecarte"
                 android:layout_width="35dp"
                 android:layout_height="30dp"
                 android:layout_weight="1"
-                android:text="J4" />
+                android:ems="10"
+                android:hint="Score"
+                android:inputType="textPersonName" />
         </TableRow>
 
-        <ListView
-            android:id="@+id/listviewscorestrous"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,10 @@
 package com.example.androidprojet;
 
 public class LigneCarteDeScore {
-    private String par ,j1, j2, j3, j4;
+    private String trou, par ,j1, j2, j3, j4;
 
-    public LigneCarteDeScore(String par, String j1, String j2, String j3, String j4){
+    public LigneCarteDeScore(String trou,String par, String j1, String j2, String j3, String j4){
+        this.trou = trou;
         this.par = par;
         this.j1 = j1;
         this.j2 = j2;
@@ -49,5 +50,13 @@ public class LigneCarteDeScore {
 
     public void setJ4(String j4) {
         this.j4 = j4;
+    }
+
+    public String getTrou() {
+        return trou;
+    }
+
+    public void setTrou(String trou) {
+        this.trou = trou;
     }
 }

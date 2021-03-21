@@ -22,7 +22,6 @@ public class AsyncCds extends AsyncTask<String, Void, CarteDeScore> {
 
     @Override
     protected CarteDeScore doInBackground(String... strings) {
-        Log.i("TAG", "message1");
         return lcds;
     }
 

@@ -44,12 +44,13 @@ public class MyAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-            convertView = inflater.inflate(R.layout.lignecartedescore_layout, parent, false);
-//            ((TextView) convertView.findViewById(R.id.trou)).setText(vector.get(position).getPar());
-            /*((EditText) convertView.findViewById(R.id.j1)).setText(vector.get(position).getJ1());
-            ((EditText) convertView.findViewById(R.id.j2)).setText(vector.get(position).getJ2());
-            ((EditText) convertView.findViewById(R.id.j3)).setText(vector.get(position).getJ3());
-            ((EditText) convertView.findViewById(R.id.j4)).setText(vector.get(position).getJ4());*/
+            convertView = inflater.inflate(R.layout.activity_ligne_carte, parent, false);
+            ((TextView) convertView.findViewById(R.id.alltroucarte)).setText(vector.get(position).getTrou());
+            ((TextView) convertView.findViewById(R.id.allparcarte)).setText(vector.get(position).getPar());
+            ((TextView) convertView.findViewById(R.id.allj1scorecarte)).setText(vector.get(position).getJ1());
+            ((TextView) convertView.findViewById(R.id.allj2scorecarte)).setText(vector.get(position).getJ2());
+            ((TextView) convertView.findViewById(R.id.allj3scorecarte)).setText(vector.get(position).getJ3());
+            ((TextView) convertView.findViewById(R.id.allj4scorecarte)).setText(vector.get(position).getJ4());
         }
 
         return convertView;
