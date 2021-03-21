@@ -21,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -73,8 +74,11 @@ public class ParcoursCreateCarteActivity extends AppCompatActivity {
                 String parcourname = parent.getItemAtPosition(position).toString();
 
                 Toast.makeText(ParcoursCreateCarteActivity.this, "redirected to " + parcourname + " page", Toast.LENGTH_SHORT).show();
-
-                String idcarte = date.getTime()+" "+golfname+" "+parcourname;
+                Date date2 = new Date(date.getTime());
+                SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy_HH:mm:ss");
+                String d = sdf.format(date2);
+                String idcarte = d +" "+golfname+" "+parcourname;
+                Log.i("eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee", idcarte);
 
 
 
