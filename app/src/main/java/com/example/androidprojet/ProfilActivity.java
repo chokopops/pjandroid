@@ -149,6 +149,9 @@ public class ProfilActivity extends AppCompatActivity {
                                 public void onSuccess(Void aVoid) {
                                     Log.d("success", "DocumentSnapshot successfully updated!");
                                     user.setPhotodeprofil(url);
+                                    Intent intent = new Intent(ProfilActivity.this, MainMenuUserActivity.class);
+                                    intent.putExtra("user",user);
+                                    startActivity(intent);
                                 }
                             })
                             .addOnFailureListener(new OnFailureListener() {
