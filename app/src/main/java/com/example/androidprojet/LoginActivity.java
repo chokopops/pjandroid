@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,6 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView tvLogin;
     private EditText etEmail, etPassword;
     private Button bSubmit;
+    private ProgressBar progressbarlogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +39,15 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = (EditText)findViewById(R.id.loginpassword);
         bSubmit = (Button)findViewById(R.id.loginbutton);
 
+        progressbarlogin = (ProgressBar)findViewById(R.id.progressbarlogin);
+
         fAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         if(fAuth.getCurrentUser() != null){
+
+            progressbarlogin.setVisibility(View.VISIBLE);
+
             String email = fAuth.getCurrentUser().getEmail();
 
             db.collection("Users").document(email)
@@ -84,6 +91,9 @@ public class LoginActivity extends AppCompatActivity {
         bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                progressbarlogin.setVisibility(View.VISIBLE);
+
                 String email = etEmail.getText().toString();
                 System.out.println(email);
                 String password = etPassword.getText().toString();

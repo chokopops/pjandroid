@@ -55,6 +55,8 @@ public class UploadParcours extends AppCompatActivity{
     //ImageView
     private ImageView imageView;
 
+    private ProgressBar progressbaruploadparcours;
+
     //a Uri object to store file path
     private Uri filePath;
     @Override
@@ -77,6 +79,8 @@ public class UploadParcours extends AppCompatActivity{
 
         imageView = (ImageView) findViewById(R.id.imageView);
 
+        progressbaruploadparcours = (ProgressBar)findViewById(R.id.progressbaruploadparcours);
+
         buttonChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,6 +96,7 @@ public class UploadParcours extends AppCompatActivity{
             public void onClick(View v) {
                 if (!nomParcours.getText().toString().replaceAll("\\s", "").matches("")){
                     if (filePath != null) {
+                        progressbaruploadparcours.setVisibility(View.VISIBLE);
                         // Create the file metadata
                         FirebaseStorage storage = FirebaseStorage.getInstance();
                         StorageMetadata metadata = new StorageMetadata.Builder()
@@ -182,7 +187,7 @@ public class UploadParcours extends AppCompatActivity{
                     error.setText("Remplissez tous les champs");
                     Log.i("efe","feij");
                 }
-
+                progressbaruploadparcours.setVisibility(View.VISIBLE);
             }
         });
 

@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -39,6 +40,7 @@ public class ProfilActivity extends AppCompatActivity {
     private String url = "";
     //a Uri object to store file path
     private Uri filePath;
+    private ProgressBar progressbaruploadprofil;
 
     private TextView email, username;
     private Button buttonResetPW, buttonUploadImage;
@@ -52,6 +54,8 @@ public class ProfilActivity extends AppCompatActivity {
 
         email = (TextView)findViewById(R.id.emailtv2);
         username = (TextView)findViewById(R.id.usernametv2);
+
+        progressbaruploadprofil= (ProgressBar)findViewById(R.id.progressbaruploadprofil);
 
         buttonResetPW = (Button)findViewById(R.id.buttonResetPW);
         buttonUploadImage = (Button)findViewById(R.id.buttonUploadImage);
@@ -99,6 +103,7 @@ public class ProfilActivity extends AppCompatActivity {
     }
 
     protected void upload(){
+        progressbaruploadprofil.setVisibility(View.VISIBLE);
         if (filePath != null) {
             // Create the file metadata
             FirebaseStorage storage = FirebaseStorage.getInstance();
@@ -142,17 +147,14 @@ public class ProfilActivity extends AppCompatActivity {
                                 public void onSuccess(Void aVoid) {
                                     Log.d("success", "DocumentSnapshot successfully updated!");
                                     user.setPhotodeprofil(url);
-                                    Intent intent = new Intent(ProfilActivity.this, MainMenuUserActivity.class);
-                                    intent.putExtra("user",user);
-                                    startActivity(intent);
                                 }
                             })
-                                    .addOnFailureListener(new OnFailureListener() {
-                                        @Override
-                                        public void onFailure(@NonNull Exception e) {
-                                            Log.w("error", "Error updating document", e);
-                                        }
-                                    });
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.w("error", "Error updating document", e);
+                                }
+                            });
 
                         }
                     }).addOnFailureListener(new OnFailureListener() {
@@ -163,7 +165,7 @@ public class ProfilActivity extends AppCompatActivity {
                     });
                 }
             });
-
+            progressbaruploadprofil.setVisibility(View.INVISIBLE);
         }
     }
 

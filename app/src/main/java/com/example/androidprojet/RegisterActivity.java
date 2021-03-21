@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +32,7 @@ public class RegisterActivity extends AppCompatActivity {
     private TextView tvRegister;
     private EditText etEmail, etPassword;
     private Button bSubmit;
+    private ProgressBar progressbarregister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +44,14 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword = (EditText)findViewById(R.id.registerpassword);
         bSubmit = (Button)findViewById(R.id.registerbutton);
 
+        progressbarregister = (ProgressBar)findViewById(R.id.progressbarregister);
+
         fAuth = FirebaseAuth.getInstance();
         FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         if(fAuth.getCurrentUser() != null){
+            progressbarregister.setVisibility(View.VISIBLE);
+
             String email = fAuth.getCurrentUser().getEmail();
 
             db.collection("Users").document(email)
@@ -88,6 +94,9 @@ public class RegisterActivity extends AppCompatActivity {
         bSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                progressbarregister.setVisibility(View.VISIBLE);
+
                 String email = etEmail.getText().toString();
                 String password = etPassword.getText().toString();
 
